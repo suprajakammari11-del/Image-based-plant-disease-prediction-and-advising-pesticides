@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plant Leaf Disease Detection using CNN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+        .hero {
+            background: black url(static/images/bg.jpeg) center / cover;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="hero is-fullheight" has-background-black>
+    <section class="section">
+        <div class="container">
+            <h1 class="title" style="font-size:2.5rem">
+                Plant Leaf Disease Detection using CNN
+            </h1>
+            <p class="subsubtitle">
+                by <strong>Python</strong>
+            </p>
+        </div>
+    </section>
+
+    <div class="columns">
+        <div class="column is-narrow">
+        </div>
+
+        <div class="column is-one-third has-text-centered">
+            <img class="pred_img" src="{{ url_for('send_file', filename=image_file_name)}}"/>
+        </div>
+
+        <div class="column is-one-quarter" style="font-size:2.5rem">
+            <h2 id="pred" style="color:white">
+                This is a <span style="font-weight: bold; color:whitesmoke;">{{ label }}</span>
+            </h2>
+
+            <h2 style="font-size: 2rem">
+                Confidence: <span style="font-weight: bold; color:whitesmoke;">{{ prob }}%</span>
+            </h2>
+
+            <!-- Display label details based on the predicted label -->
+            <div id="labelDetails" style="color:white; margin-top: 20px;">
+                {% if label == 'Apple___Black_rot' %}
+                    <p>Precautions:combined use of culture, sanitation, resistance, and fungicide sprays</p>
+                {% elif label == 'Apple___Cedar_apple_rust' %}
+                    <p>Precautions:Prune and remove brown, woody galls found before orange, gelatinous structures form in the spring</p>
+                {% elif label == 'Apple___healthy' %}
+                    <p>Precautions:no need of any pesticide</p>
+                {% elif label == 'Cherry_(including_sour)___healthy' %}
+                    <p>Precautions:no need of any pesticide</p>
+                {% elif label == 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot' %}
+                    <p>Precautions:Adopt crop rotation</p>
+                {% elif label == 'Corn_(maize)___Common_rust_' %}
+                    <p>Precautions:Apply a foliar fungicide</p>
+                {% elif label == 'Corn_(maize)___healthy' %}
+                    <p>Precautions:no need anything</p>
+                {% elif label == 'Grape___Black_rot' %}
+                    <p>Precautions:Provide trees with adequate water</p>
+                {% elif label == 'Grape___Esca_(Black_Measles)' %}
+                    <p>Precautions:early season fungicide sprays should be timed to prevent the earliest infections</p>
+                {% else %}
+                    <p>Precautions:no need anything</p>
+                {% endif %}
+            </div>
+
+            <br>
+            <a href="/" class="button is-black is-inverted is-outlined" style="font-size:1.5rem">Back to Home</a>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+        </div>
+    </section>
+</section>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
