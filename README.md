@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Image Based Plant Disease Prediction and Advising Pesticides
 
 ## Overview
@@ -81,3 +82,6 @@ It provides real-world applicability for farmers and agricultural researchers, r
 - Larger training dataset for multi-crop generalization  
 - Incorporation of IoT-based live monitoring  
 - Cloud deployment for accessible model inference
+=======
+# Image-based-plant-disease-prediction-and-advising-pesticides
+>>>>>>> 78a14f34c2321a31ca563d6eb0467d5cb003605f
