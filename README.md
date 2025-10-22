@@ -1,0 +1,1 @@
+# Image-based-plant-disease-prediction-and-advising-pesticides
